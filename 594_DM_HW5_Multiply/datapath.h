@@ -7,8 +7,8 @@
 
 SC_MODULE(datapath)
 {
-	sc_in<sc_logic> clk, clr_P, load_P, load_B, msb_out, lsb_out, sel_sum, load_A, shift_A, start, rst;
-	sc_inout<sc_lv<8> > data;
+	sc_in<sc_logic> oe,clk, clr_P, load_P, load_B,load_A, start, rst;
+	sc_inout<sc_lv<8> > A_IN, B_IN, W;
 	sc_out<sc_logic> A0;
 
 	sc_signal<sc_lv<8> > sum, ShiftAdd, A, B, P, pIn;
@@ -32,36 +32,36 @@ SC_MODULE(datapath)
 	{
 		
 		adder = new nBitAdder("adder_Instance");
-			adder->ain(B);
+			adder->ain(A);
 			adder->bin(P);
 			adder->ci(rst);
 			adder->addout(sum);
 			adder->co(co);
 	
 		TriState = new octalTriState("lsbTriState_Instance");
-			TriState->sel(lsb_out);
-			TriState->ain(A);
-			TriState->yout(data);
+			TriState->sel(oe);
+			TriState->ain(P);
+			TriState->yout(W);
 		
-		regA = new dRegisterRaE("regB_Instance");
+		regA = new dRegisterRaE("regA_Instance");
 			regA->rst(rst);
 			regA->clk(clk);
 			regA->cen(load_A);
-			regA->regin(data);
+			regA->regin(A_IN);
 			regA->regout(A);
 
 		regB = new dRegisterRaE("regB_Instance");
 			regB->rst(rst);
 			regB->clk(clk);
 			regB->cen(load_B);
-			regB->regin(data);
+			regB->regin(B_IN);
 			regB->regout(B);
 
 		regP = new dRegisterRaE("regP_Instance");
 			regP->rst(clr_P);
 			regP->clk(clk);
 			regP->cen(load_P);
-			regP->regin(pIn);
+			regP->regin(sum);
 			regP->regout(P);
 
 		SC_METHOD(datapath_func); 
