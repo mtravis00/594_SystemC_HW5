@@ -13,6 +13,7 @@ int sc_main(int argc, char ** argv)
 			sc_trace(VCDFile, multTB1.lsb_out, "lsb_out");
 			sc_trace(VCDFile, multTB1.msb_out, "msb_out");
 			sc_trace(VCDFile, multTB1.done, "done");
+			
 
 	sc_start(1700,SC_NS);
 	return 0;

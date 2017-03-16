@@ -19,7 +19,8 @@ SC_MODULE(datapath)
 	nBitAdder* adder;
 	octalMux2to1* mux;
 	octalTriState* msbTriState;
-	octalTriState* lsbTriState;
+	octalTriState* TriState;
+	dRegisterRaE* regA;
 	dRegisterRaE* regB;
 	dRegisterRaE* regP;
 	rShifterRaEL* sRegA;      		           
@@ -29,42 +30,25 @@ SC_MODULE(datapath)
 	
 	SC_CTOR(datapath)
 	{
-		andG = new andGate("andG_Instance");
-			andG->a(co);
-			andG->b(sel_sum);
-			andG->y(andOut);
-
+		
 		adder = new nBitAdder("adder_Instance");
 			adder->ain(B);
 			adder->bin(P);
 			adder->ci(rst);
 			adder->addout(sum);
 			adder->co(co);
-
-		mux = new octalMux2to1("mux_Instance");
-			mux->sel(sel_sum);
-			mux->ain(P);
-			mux->bin(sum);
-			mux->yout(ShiftAdd);
-			
-		msbTriState = new octalTriState("msbTriState_Instance");
-			msbTriState->sel(msb_out);
-			msbTriState->ain(P);
-			msbTriState->yout(data);
-
-		lsbTriState = new octalTriState("lsbTriState_Instance");
-			lsbTriState->sel(lsb_out);
-			lsbTriState->ain(A);
-			lsbTriState->yout(data);
-
-		sRegA = new rShifterRaEL("sRegA_Instance");
-			sRegA->rst(rst);
-			sRegA->clk(clk);
-			sRegA->sen(shift_A);
-			sRegA->pld(load_A);
-			sRegA->sin(ShiftAdd0);
-			sRegA->parin(data);
-			sRegA->shftout(A);
+	
+		TriState = new octalTriState("lsbTriState_Instance");
+			TriState->sel(lsb_out);
+			TriState->ain(A);
+			TriState->yout(data);
+		
+		regA = new dRegisterRaE("regB_Instance");
+			regA->rst(rst);
+			regA->clk(clk);
+			regA->cen(load_A);
+			regA->regin(data);
+			regA->regout(A);
 
 		regB = new dRegisterRaE("regB_Instance");
 			regB->rst(rst);
