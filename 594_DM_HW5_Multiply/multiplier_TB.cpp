@@ -60,7 +60,7 @@ void multiplier_TB::inputting() {
 		databus = (sc_lv<8>)val;
 		wait(1000,SC_NS);*/
 		databus = "00001001";
-		A_IN = "00001011";
+		A_IN = "00000011";
 		B_IN = "00000111";
 	//	wait(90,SC_NS);		
 	//	databus = "00001101";

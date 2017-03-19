@@ -17,7 +17,7 @@ void controller::comb_func ()
    pld = SC_LOGIC_0;
    parin = "00000000";
 
-   
+   int pause;
 
    switch (p_state) {
 		 case (idle)	: 
@@ -38,12 +38,15 @@ void controller::comb_func ()
 		 case (m)		: 			  
 			 count = cnt_Out.read();
 			 limit = B.read();
-			 cout << "bout is **********************" << limit;
+			 cout << "bout is  **********************" << limit << endl;
+			 cout << "count is **********************" << count << endl;
+			 cin >> pause;
 			 // if(cnt_Out.read() == "00000111"){
-			 if(count < limit){
+			 if(count  == limit ){
 				 
-				 load_P = SC_LOGIC_1;
+				 load_P = SC_LOGIC_0;
 				 n_state = rslt1;
+				 enable_Count = SC_LOGIC_0;
 			 }else{
 				 //shift_A = SC_LOGIC_1;
 				 load_P = SC_LOGIC_1;

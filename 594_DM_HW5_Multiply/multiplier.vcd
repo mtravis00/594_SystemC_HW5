@@ -1,5 +1,5 @@
 $date
-     Mar 18, 2017       22:00:45
+     Mar 18, 2017       22:22:24
 $end
 
 $version
@@ -52,7 +52,7 @@ $end
 
 #150000
 1aaaaa
-b1011 aaaad
+b11 aaaad
 b111 aaaae
 
 #180000
@@ -63,16 +63,12 @@ b111 aaaae
 
 #250000
 1aaaaa
-b1011 aaaaf
-1aaaag
 
 #300000
 0aaaaa
 
 #350000
 1aaaaa
-bZZZZZZZZ aaaaf
-0aaaag
 
 #400000
 0aaaaa
@@ -109,12 +105,16 @@ bZZZZZZZZ aaaaf
 
 #950000
 1aaaaa
+b10101 aaaaf
+1aaaag
 
 #1000000
 0aaaaa
 
 #1050000
 1aaaaa
+bZZZZZZZZ aaaaf
+0aaaag
 
 #1100000
 0aaaaa
