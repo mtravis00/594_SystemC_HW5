@@ -4,10 +4,13 @@
 SC_MODULE(multiplier)
 {
 	sc_in<sc_logic> clk, start, rst;
-	sc_inout<sc_lv<8> > databus;
-	sc_out<sc_logic> lsb_out, msb_out, done;
+	sc_in<sc_lv<8> > A_IN,B_IN;
+	sc_out<sc_lv<8> > W;
+	//sc_out<sc_logic> lsb_out, msb_out, done;
+	sc_out<sc_logic>  done;
+	sc_signal<sc_lv<8>> B;
 
-	sc_signal<sc_logic> clr_P, load_P, load_B, sel_sum, load_A, shift_A, A0;
+	sc_signal<sc_logic> clr_P, load_P, load_B, sel_sum, load_A, shift_A, A0,oe;
 
 	datapath* datapathInst;
 	controller* controllerInst;	
@@ -24,10 +27,15 @@ SC_MODULE(multiplier)
 	//		datapathInst->lsb_out(lsb_out);
 	//		datapathInst->sel_sum(sel_sum);
 			datapathInst->load_A(load_A);
+			datapathInst->B(B);
 	//		datapathInst->shift_A(shift_A);
 	//		datapathInst->A0(A0);
 	//		datapathInst->data(databus);
 			datapathInst->start(start);
+			datapathInst->oe(oe);
+			datapathInst->A_IN(A_IN);
+			datapathInst->B_IN(B_IN);
+			datapathInst->W(W);
 
 		controllerInst = new controller("controllerInst");
 			controllerInst->clk(clk);
@@ -37,11 +45,13 @@ SC_MODULE(multiplier)
 			controllerInst->clr_P(clr_P);
 			controllerInst->load_P(load_P);
 			controllerInst->load_B(load_B);
-			controllerInst->msb_out(msb_out);
-			controllerInst->lsb_out(lsb_out);
-			controllerInst->sel_sum(sel_sum);
+			controllerInst->B(B);
+			controllerInst->oe(oe);
+	//		controllerInst->msb_out(msb_out);
+	//		controllerInst->lsb_out(lsb_out);
+	//		controllerInst->sel_sum(sel_sum);
 			controllerInst->load_A(load_A);
-			controllerInst->shift_A(shift_A);
+	//		controllerInst->shift_A(shift_A);
 			controllerInst->done(done);
 	}
 };

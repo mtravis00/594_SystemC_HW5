@@ -13,10 +13,11 @@ void multiplier_TB::clocking() {
     }
 }
 void multiplier_TB::outputting() {
-	if (msb_out == '1') 
+/*	if (msb_out == '1') 
 		multiplier_result(15,8) = databus.read();
 	if (lsb_out == '1')
-		multiplier_result(7,0) = databus.read();
+		multiplier_result(7,0) = databus.read();*/
+	multiplier_result(7, 0) = W.read();
 
 }
 
@@ -59,9 +60,10 @@ void multiplier_TB::inputting() {
 		databus = (sc_lv<8>)val;
 		wait(1000,SC_NS);*/
 		databus = "00001001";
-		
-		wait(90,SC_NS);		
-		databus = "00001101";
+		A_IN = "00001011";
+		B_IN = "00000111";
+	//	wait(90,SC_NS);		
+	//	databus = "00001101";
 		
 		wait(120,SC_NS);		
 		databus = "zzzzzzzz";

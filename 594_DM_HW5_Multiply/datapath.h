@@ -10,9 +10,9 @@ SC_MODULE(datapath)
 	sc_in<sc_logic> oe,clk, clr_P, load_P, load_B,load_A, start, rst;
 	sc_in<sc_lv<8> > A_IN, B_IN;
 
-	sc_out<sc_lv<8>> W;
+	sc_out<sc_lv<8>> W, B;
 
-	sc_signal<sc_lv<8> > sum, ShiftAdd, A, B, P;
+	sc_signal<sc_lv<8> > sum, ShiftAdd, A,  P;
 	
 	sc_signal<sc_logic> co, andOut, ci, ShiftAdd0;	
 

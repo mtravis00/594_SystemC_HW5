@@ -1,5 +1,5 @@
 $date
-     Mar 15, 2017       20:41:52
+     Mar 18, 2017       22:00:45
 $end
 
 $version
@@ -14,9 +14,9 @@ $scope module SystemC $end
 $var wire    1  aaaaa  clk       $end
 $var wire    1  aaaab  rst       $end
 $var wire    1  aaaac  start       $end
-$var wire    8  aaaad  databus [7:0]  $end
-$var wire    1  aaaae  lsb_out       $end
-$var wire    1  aaaaf  msb_out       $end
+$var wire    8  aaaad  A_IN [7:0]  $end
+$var wire    8  aaaae  B_IN [7:0]  $end
+$var wire    8  aaaaf  W [7:0]  $end
 $var wire    1  aaaag  done       $end
 $upscope $end
 $enddefinitions  $end
@@ -29,9 +29,9 @@ $dumpvars
 0aaaaa
 0aaaab
 0aaaac
-bZZZZZZZZ aaaad
-0aaaae
-0aaaaf
+bXXXXXXXX aaaad
+bXXXXXXXX aaaae
+bZZZZZZZZ aaaaf
 0aaaag
 $end
 
@@ -52,7 +52,8 @@ $end
 
 #150000
 1aaaaa
-b1001 aaaad
+b1011 aaaad
+b111 aaaae
 
 #180000
 0aaaac
@@ -60,20 +61,18 @@ b1001 aaaad
 #200000
 0aaaaa
 
-#240000
-b1101 aaaad
-
 #250000
 1aaaaa
+b1011 aaaaf
+1aaaag
 
 #300000
 0aaaaa
 
 #350000
 1aaaaa
-
-#360000
-bZZZZZZZZ aaaad
+bZZZZZZZZ aaaaf
+0aaaag
 
 #400000
 0aaaaa
@@ -116,27 +115,18 @@ bZZZZZZZZ aaaad
 
 #1050000
 1aaaaa
-b1110101 aaaad
-1aaaae
 
 #1100000
 0aaaaa
 
 #1150000
 1aaaaa
-b0 aaaad
-0aaaae
-1aaaaf
-1aaaag
 
 #1200000
 0aaaaa
 
 #1250000
 1aaaaa
-bZZZZZZZZ aaaad
-0aaaaf
-0aaaag
 
 #1300000
 0aaaaa

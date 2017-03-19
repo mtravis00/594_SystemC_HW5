@@ -9,9 +9,9 @@ int sc_main(int argc, char ** argv)
 			sc_trace(VCDFile, multTB1.clk, "clk");
 			sc_trace(VCDFile, multTB1.rst, "rst");
 			sc_trace(VCDFile, multTB1.start, "start");
-			sc_trace(VCDFile, multTB1.databus, "databus");
-			sc_trace(VCDFile, multTB1.lsb_out, "lsb_out");
-			sc_trace(VCDFile, multTB1.msb_out, "msb_out");
+			sc_trace(VCDFile, multTB1.A_IN, "A_IN");
+			sc_trace(VCDFile, multTB1.B_IN, "B_IN");
+			sc_trace(VCDFile, multTB1.W, "W");
 			sc_trace(VCDFile, multTB1.done, "done");
 			
 
