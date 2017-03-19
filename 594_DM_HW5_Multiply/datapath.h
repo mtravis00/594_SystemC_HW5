@@ -8,11 +8,12 @@
 SC_MODULE(datapath)
 {
 	sc_in<sc_logic> oe,clk, clr_P, load_P, load_B,load_A, start, rst;
-	sc_inout<sc_lv<8> > A_IN, B_IN, W;
-	sc_out<sc_logic> A0;
+	sc_in<sc_lv<8> > A_IN, B_IN;
 
-	sc_signal<sc_lv<8> > sum, ShiftAdd, A, B, P, pIn;
-	sc_lv<8> ShiftAddClr;
+	sc_out<sc_lv<8>> W;
+
+	sc_signal<sc_lv<8> > sum, ShiftAdd, A, B, P;
+	
 	sc_signal<sc_logic> co, andOut, ci, ShiftAdd0;	
 
 	andGate* andG;
@@ -23,7 +24,7 @@ SC_MODULE(datapath)
 	dRegisterRaE* regA;
 	dRegisterRaE* regB;
 	dRegisterRaE* regP;
-	rShifterRaEL* sRegA;      		           
+//	rShifterRaEL* sRegA;      		           
          
 	void datapath_func();
 	void datapath_disp();
@@ -64,8 +65,8 @@ SC_MODULE(datapath)
 			regP->regin(sum);
 			regP->regout(P);
 
-		SC_METHOD(datapath_func); 
-		sensitive << clr_P << A << ShiftAdd << andOut;
+	//	SC_METHOD(datapath_func); 
+	//	sensitive << clr_P << A << ShiftAdd << andOut;
 
 		SC_METHOD(datapath_disp); 
 		sensitive << clk;

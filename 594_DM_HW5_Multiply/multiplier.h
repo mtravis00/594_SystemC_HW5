@@ -20,13 +20,13 @@ SC_MODULE(multiplier)
 			datapathInst->clr_P(clr_P);
 			datapathInst->load_P(load_P);
 			datapathInst->load_B(load_B);
-			datapathInst->msb_out(msb_out);
-			datapathInst->lsb_out(lsb_out);
-			datapathInst->sel_sum(sel_sum);
+//			datapathInst->msb_out(msb_out);
+	//		datapathInst->lsb_out(lsb_out);
+	//		datapathInst->sel_sum(sel_sum);
 			datapathInst->load_A(load_A);
-			datapathInst->shift_A(shift_A);
-			datapathInst->A0(A0);
-			datapathInst->data(databus);
+	//		datapathInst->shift_A(shift_A);
+	//		datapathInst->A0(A0);
+	//		datapathInst->data(databus);
 			datapathInst->start(start);
 
 		controllerInst = new controller("controllerInst");
