@@ -38,9 +38,9 @@ void controller::comb_func ()
 		 case (m)		: 			  
 			 count = cnt_Out.read();
 			 limit = B.read();
-			 cout << "bout is  **********************" << limit << endl;
-			 cout << "count is **********************" << count << endl;
-			 cin >> pause;
+			// cout << "bout is  **********************" << limit << endl;
+		//	 cout << "count is **********************" << count << endl;
+			// cin >> pause;
 			 // if(cnt_Out.read() == "00000111"){
 			 if(count  == limit ){
 				 
