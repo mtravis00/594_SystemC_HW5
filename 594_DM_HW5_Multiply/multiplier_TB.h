@@ -3,7 +3,8 @@
 SC_MODULE(multiplier_TB)
 {
 	sc_signal<sc_logic> start, clk, lsb_out, msb_out, done, rst;
-	sc_signal_rv<8> databus, A_IN, B_IN, W;
+	sc_signal_rv<8> databus, W;
+	sc_signal_rv<4>  A_IN, B_IN;
 	sc_signal<sc_lv<8> > temp_data;
 	sc_lv<16>  multiplier_result;
 

@@ -4,8 +4,8 @@
 SC_MODULE(multiplier)
 {
 	sc_in<sc_logic> clk, start, rst;
-	sc_in<sc_lv<8> > A_IN,B_IN;
-	sc_out<sc_lv<8> > W;
+	sc_in<sc_lv<4>> A_IN,B_IN;
+	sc_out<sc_lv<8>> W;
 	//sc_out<sc_logic> lsb_out, msb_out, done;
 	sc_out<sc_logic>  done;
 	sc_signal<sc_lv<8>> B;

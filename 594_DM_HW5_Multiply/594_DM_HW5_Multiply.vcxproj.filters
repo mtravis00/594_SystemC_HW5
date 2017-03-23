@@ -51,6 +51,9 @@
     <ClCompile Include="uCounterRaEL.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="busPad.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="andGate.h">
@@ -84,6 +87,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="uCounterRaEL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="busPad.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

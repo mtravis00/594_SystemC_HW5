@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="andGate.cpp" />
+    <ClCompile Include="busPad.cpp" />
     <ClCompile Include="controller.cpp" />
     <ClCompile Include="datapatch.cpp" />
     <ClCompile Include="dRegisterRaE.cpp" />
@@ -34,6 +35,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="andGate.h" />
+    <ClInclude Include="busPad.h" />
     <ClInclude Include="controller.h" />
     <ClInclude Include="datapath.h" />
     <ClInclude Include="dRegisterRaE.h" />
