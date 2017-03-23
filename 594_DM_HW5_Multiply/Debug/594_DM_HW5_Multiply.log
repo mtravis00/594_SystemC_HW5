@@ -1,13 +1,1 @@
-﻿  datapatch.cpp
-  Unknown compiler version - please run the configure tests and report the results
-  Generating Code...
-  Compiling...
-  multiplier_TB.cpp
-  Unknown compiler version - please run the configure tests and report the results
-c:\workspace\594_systemc_hw5\594_dm_hw5_multiply\multiplier_tb.cpp(54): warning C4101: 'val': unreferenced local variable
-  multiplier_Main.cpp
-  Unknown compiler version - please run the configure tests and report the results
-  multiplier.cpp
-  Unknown compiler version - please run the configure tests and report the results
-  Generating Code...
-  594_DM_HW5_Multiply.vcxproj -> C:\workspace\594_SystemC_HW5\594_DM_HW5_Multiply\Debug\594_DM_HW5_Multiply.exe
+﻿  594_DM_HW5_Multiply.vcxproj -> C:\workspace\594_SystemC_HW5\594_DM_HW5_Multiply\Debug\594_DM_HW5_Multiply.exe
